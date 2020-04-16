@@ -22,6 +22,6 @@ func TestAccessToken_IsExpired(testing *testing.T) {
 	accessToken := AccessToken{}
 	assert.True(testing, accessToken.IsExpired(), "empty token must be expired")
 
-	accessToken.Expires = time.Now().UTC().Add(3 * time.Hour).Unix()
+	accessToken.ExpirationTime = time.Now().UTC().Add(3 * time.Hour).Unix()
 	assert.False(testing, accessToken.IsExpired(), "token expiring three hours from now should not be expired")
 }
