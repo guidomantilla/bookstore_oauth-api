@@ -44,13 +44,20 @@ func Config() {
 
 	ConfigProperties()
 
-	Properties[BOOKSTORE_OAUTH_DATASOURCE_URL] = "127.0.0.1"
-	Properties[BOOKSTORE_OAUTH_DATASOURCE_USERNAME] = ""
-	Properties[BOOKSTORE_OAUTH_DATASOURCE_PASSWORD] = ""
-	Properties[BOOKSTORE_OAUTH_DATASOURCE_KEYSPACE] = "oauth"
-	Properties[BOOKSTORE_OAUTH_ENVIRONMENT] = "dev"
+	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_URL, "127.0.0.1")
+	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_USERNAME, "")
+	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_PASSWORD, "")
+	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_KEYSPACE, "oauth")
+	AddProperties(BOOKSTORE_OAUTH_ENVIRONMENT, "dev")
 
 	ConfigZapLogger(Properties[BOOKSTORE_OAUTH_ENVIRONMENT])
+}
+
+func AddProperties(prop string, value string) {
+
+	if Properties[prop] == "" {
+		Properties[prop] = value
+	}
 }
 
 func Wire() AccessTokenWs {
