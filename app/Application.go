@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	. "github.com/guidomantilla/bookstore_oauth-api/common/config"
-	. "github.com/guidomantilla/bookstore_oauth-api/common/nosql/impl"
+	. "github.com/guidomantilla/bookstore_common-lib/common/config"
+	. "github.com/guidomantilla/bookstore_common-lib/common/nosql/impl"
 	. "github.com/guidomantilla/bookstore_oauth-api/core/repository/impl"
 	. "github.com/guidomantilla/bookstore_oauth-api/core/service/impl"
 	. "github.com/guidomantilla/bookstore_oauth-api/core/ws"

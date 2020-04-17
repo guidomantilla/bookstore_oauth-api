@@ -1,7 +1,7 @@
 package impl
 
 import (
-	. "github.com/guidomantilla/bookstore_oauth-api/common/nosql"
+	. "github.com/guidomantilla/bookstore_common-lib/common/nosql"
 	. "github.com/guidomantilla/bookstore_oauth-api/core/model"
 )
 

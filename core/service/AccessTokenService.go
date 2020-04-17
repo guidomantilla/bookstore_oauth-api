@@ -1,7 +1,7 @@
 package service
 
 import (
-	. "github.com/guidomantilla/bookstore_oauth-api/common/exception"
+	. "github.com/guidomantilla/bookstore_common-lib/common/exception"
 	. "github.com/guidomantilla/bookstore_oauth-api/core/model"
 )
 
