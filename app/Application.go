@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -31,7 +32,6 @@ func Init() {
 	router := gin.Default()
 
 	router.POST("/oauth/access_token", accessTokenWs.Create)
-	router.GET("/oauth/access_token", accessTokenWs.Find)
 	router.PUT("/oauth/access_token/:id", accessTokenWs.Update)
 	router.PATCH("/oauth/access_token/:id", accessTokenWs.UpdateExpirationTime)
 	router.DELETE("/oauth/access_token/:id", accessTokenWs.Delete)
@@ -42,22 +42,17 @@ func Init() {
 
 func Config() {
 
-	ConfigProperties()
+	propertiesConfig := NewPropertiesConfig()
+	propertiesConfig.Config()
 
-	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_URL, "127.0.0.1")
-	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_USERNAME, "")
-	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_PASSWORD, "")
-	AddProperties(BOOKSTORE_OAUTH_DATASOURCE_KEYSPACE, "oauth")
-	AddProperties(BOOKSTORE_OAUTH_ENVIRONMENT, "dev")
+	propertiesConfig.Add(BOOKSTORE_OAUTH_DATASOURCE_URL, "127.0.0.1")
+	propertiesConfig.Add(BOOKSTORE_OAUTH_DATASOURCE_USERNAME, "")
+	propertiesConfig.Add(BOOKSTORE_OAUTH_DATASOURCE_PASSWORD, "")
+	propertiesConfig.Add(BOOKSTORE_OAUTH_DATASOURCE_KEYSPACE, "oauth")
+	propertiesConfig.Add(BOOKSTORE_OAUTH_ENVIRONMENT, "dev")
 
-	ConfigZapLogger(Properties[BOOKSTORE_OAUTH_ENVIRONMENT])
-}
-
-func AddProperties(prop string, value string) {
-
-	if Properties[prop] == "" {
-		Properties[prop] = value
-	}
+	zapLoggerConfig := NewZapLoggerConfig()
+	zapLoggerConfig.Config(Properties[BOOKSTORE_OAUTH_ENVIRONMENT])
 }
 
 func Wire() AccessTokenWs {
@@ -71,6 +66,9 @@ func Wire() AccessTokenWs {
 	accessTokenRepository := NewDefaultAccessTokenRepository(cassandraDataSource)
 	accessTokenService := NewDefaultAccessTokenService(accessTokenRepository)
 	accessTokenWs := NewDefaultAccessTokenWs(accessTokenService)
+
+
+	fmt.Println(accessTokenService.FindById("2222"))
 
 	return accessTokenWs
 }

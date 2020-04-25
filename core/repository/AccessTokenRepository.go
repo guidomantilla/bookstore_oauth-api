@@ -9,7 +9,6 @@ type AccessTokenRepository interface {
 	Update(accessToken *AccessToken) error
 	Delete(id string) error
 	FindById(id string) (*AccessToken, error)
-	Find(paramMap map[string][]string) (*[]AccessToken, error)
 	ExistsById(id string) (bool, error)
 
 	//

@@ -9,6 +9,5 @@ type AccessTokenWs interface {
 	Update(context *gin.Context)
 	Delete(context *gin.Context)
 	FindById(context *gin.Context)
-	Find(context *gin.Context)
 	UpdateExpirationTime(context *gin.Context)
 }

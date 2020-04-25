@@ -9,7 +9,7 @@ import (
 
 func TestNewAccessToken(testing *testing.T) {
 
-	accessToken := NewAccessToken()
+	accessToken := NewAccessToken(1)
 	assert.NotNil(testing, accessToken, "accessToken must not be null")
 	assert.False(testing, accessToken.IsExpired(), "accessToken must not be expired")
 	assert.True(testing, accessToken.Token == "", "accessToken token should not have been defined")

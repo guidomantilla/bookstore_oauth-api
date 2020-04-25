@@ -29,8 +29,8 @@ github.com/golang/snappy v0.0.0-20170215233205-553a64147049 h1:K9KHZbXKpGydfDN0a
 github.com/golang/snappy v0.0.0-20170215233205-553a64147049/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEWrmP2Q=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
 github.com/google/renameio v0.1.0/go.mod h1:KWCgfxg9yswjAJkECMjeO8J8rahYeXnNhOm40UhjYkI=
-github.com/guidomantilla/bookstore_common-lib v1.0.0 h1:s1x4g3SyZ8mm3aw0cJ7zJKT8ZioKG4Ga0x/dngp1FVQ=
-github.com/guidomantilla/bookstore_common-lib v1.0.0/go.mod h1:nPRPK4n8o5W/Z4uB9x6VSCFhaCqDYHMOOy+yHktV46o=
+github.com/guidomantilla/bookstore_common-lib v1.1.0 h1:DHTk5VWMufJ84znJYtEEfMHN1yMrC0XIXsAHUPMfkL0=
+github.com/guidomantilla/bookstore_common-lib v1.1.0/go.mod h1:ax4G6ZSXfQDkRkb/KT1sZkg9lEUr3QIIwOQShXnEmag=
 github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed h1:5upAirOpQc1Q53c0bnx2ufif5kANL7bfZWcc6VJWJd8=
 github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed/go.mod h1:tMWxXQ9wFIaZeTI9F+hmhFiGpFmhOHzyShyFUhRm0H4=
 github.com/json-iterator/go v1.1.9 h1:9yzud/Ht36ygwatGx56VwCZtlI/2AD15T1X2sjSuGns=

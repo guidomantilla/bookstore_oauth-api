@@ -7,11 +7,9 @@ import (
 
 type AccessTokenService interface {
 	Create(accessToken *AccessToken) *Exception
-	Update(accessToken *AccessToken) *Exception
+	Update(id string, accessToken *AccessToken) *Exception
 	Delete(id string) *Exception
 	FindById(id string) (*AccessToken, *Exception)
-	Find(paramMap map[string][]string) (*[]AccessToken, *Exception)
-	ExistsById(id string) (bool, *Exception)
 
 	//
 	UpdateExpirationTime(id string, expirationTime int64) *Exception

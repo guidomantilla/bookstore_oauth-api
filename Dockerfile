@@ -1,6 +1,6 @@
 FROM golang:1.14.2-alpine3.11 AS builder
 
-# Set necessary environmet variables needed for our builder image
+# Set necessary environment variables needed for our builder image
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
     GOOS=linux \
@@ -29,7 +29,7 @@ RUN cp /build/main .
 # Build a small running image
 FROM scratch
 
-# Set necessary environmet variables needed for our running image
+# Set necessary environment variables needed for our running image
 ENV BOOKSTORE_OAUTH_DATASOURCE_URL='127.0.0.1' \
     BOOKSTORE_OAUTH_DATASOURCE_USERNAME='' \
     BOOKSTORE_OAUTH_DATASOURCE_PASSWORD='' \
